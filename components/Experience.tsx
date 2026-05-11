@@ -1,6 +1,7 @@
 import React from "react";
 
 import { workExperience } from "@/data";
+import { assetPath } from "@/lib/utils";
 import { Button } from "./ui/MovingBorders";
 
 const Experience = () => {
@@ -31,7 +32,7 @@ const Experience = () => {
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <img
-                src={card.thumbnail}
+                src={assetPath(card.thumbnail)}
                 alt={card.thumbnail}
                 className="lg:w-32 md:w-20 w-16"
               />

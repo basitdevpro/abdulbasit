@@ -7,7 +7,7 @@ import { IoCopyOutline } from "react-icons/io5";
 // Also install this npm i --save-dev @types/react-lottie
 const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
-import { cn } from "@/lib/utils";
+import { assetPath, cn } from "@/lib/utils";
 
 
 import { BackgroundGradientAnimation } from "./GradientBg";
@@ -95,7 +95,7 @@ export const BentoGridItem = ({
         <div className="w-full h-full absolute">
           {img && (
             <img
-              src={img}
+              src={assetPath(img)}
               alt={img}
               className={cn(imgClassName, "object-cover object-center ")}
             />
@@ -107,7 +107,7 @@ export const BentoGridItem = ({
         >
           {spareImg && (
             <img
-              src={spareImg}
+              src={assetPath(spareImg)}
               alt={spareImg}
               //   width={220}
               className="object-cover object-center w-full h-full"

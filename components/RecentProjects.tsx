@@ -3,6 +3,7 @@
 import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
+import { assetPath } from "@/lib/utils";
 import { PinContainer } from "./ui/Pin";
 
 const RecentProjects = () => {
@@ -58,7 +59,7 @@ const RecentProjects = () => {
                           transform: `translateX(-${5 * index + 2}px)`,
                         }}
                       >
-                        <img src={icon} alt="icon5" className="p-2" />
+                        <img src={assetPath(icon)} alt="icon5" className="p-2" />
                       </div>
                     ))}
                   </div>

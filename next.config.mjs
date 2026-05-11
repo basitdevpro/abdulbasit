@@ -1,6 +1,22 @@
 import {withSentryConfig} from '@sentry/nextjs';
+
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "abdulbasit";
+const basePath = isGithubPages ? `/${repoName}` : "";
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  output: "export",
+  trailingSlash: true,
+  basePath,
+  assetPrefix: isGithubPages ? `${basePath}/` : undefined,
+  images: {
+    unoptimized: true,
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
+};
 
 export default withSentryConfig(nextConfig, {
 // For all available options, see:
@@ -8,6 +24,7 @@ export default withSentryConfig(nextConfig, {
 
 // Suppresses source map uploading logs during build
 silent: true,
+dryRun: isGithubPages || !process.env.SENTRY_AUTH_TOKEN,
 org: "javascript-mastery",
 project: "javascript-nextjs",
 }, {
