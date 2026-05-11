@@ -1,4 +1,4 @@
-import {withSentryConfig} from '@sentry/nextjs';
+import { withSentryConfig } from "@sentry/nextjs";
 
 const isGithubPages = process.env.GITHUB_PAGES === "true";
 const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "abdulbasit";
@@ -18,16 +18,18 @@ const nextConfig = {
   },
 };
 
-export default withSentryConfig(nextConfig, {
+const sentryWebpackPluginOptions = {
 // For all available options, see:
 // https://github.com/getsentry/sentry-webpack-plugin#options
 
 // Suppresses source map uploading logs during build
 silent: true,
-dryRun: isGithubPages || !process.env.SENTRY_AUTH_TOKEN,
+dryRun: !process.env.SENTRY_AUTH_TOKEN,
 org: "javascript-mastery",
 project: "javascript-nextjs",
-}, {
+};
+
+const sentryOptions = {
 // For all available options, see:
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 
@@ -54,4 +56,8 @@ disableLogger: true,
 // https://docs.sentry.io/product/crons/
 // https://vercel.com/docs/cron-jobs
 automaticVercelMonitors: true,
-});
+};
+
+export default isGithubPages
+  ? nextConfig
+  : withSentryConfig(nextConfig, sentryWebpackPluginOptions, sentryOptions);
