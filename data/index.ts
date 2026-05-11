@@ -71,44 +71,12 @@ export const gridItems = [
 
 export const projects = [
   {
-    id: 1,
-    title: "Ecocore",
-    des: "WordPress website developed with a responsive, business-focused layout.",
-    img: "/p1.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://ecocore.pk",
-  },
-  {
-    id: 2,
-    title: "Quick DigitX",
-    des: "WordPress website built for a modern digital service presence.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://quickdigitx.com",
-  },
-  {
-    id: 3,
-    title: "The Auto Mask",
-    des: "WordPress website project for an automotive product/service brand.",
-    img: "/p3.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://theautomask.com",
-  },
-  {
     id: 4,
     title: "Textured Lab",
     des: "WordPress website developed for a polished brand experience.",
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
     link: "https://texturedlab.com",
-  },
-  {
-    id: 5,
-    title: "Writerz Nest",
-    des: "WordPress website for content, writing, and professional service presentation.",
-    img: "/p1.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://writerznest.com",
   },
   {
     id: 6,
@@ -149,14 +117,6 @@ export const projects = [
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
     link: "https://fjsteelindustries.com",
-  },
-  {
-    id: 11,
-    title: "Trademark USA Services",
-    des: "WordPress website for a trademark and business service provider.",
-    img: "/p3.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://trademarkusaservices.com",
   },
   {
     id: 12,
@@ -357,14 +317,6 @@ export const projects = [
     img: "/p4.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
     link: "https://www.floridaisland.com",
-  },
-  {
-    id: 37,
-    title: "ESR Blog Test",
-    des: "Shopify website project with ecommerce and content structure.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
-    link: "https://esr-blog-test.com",
   },
   {
     id: 38,
